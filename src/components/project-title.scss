@@ -3,10 +3,11 @@
 .project-title {
     background-color: white;
     max-width: 90%;
-    margin: 0 auto;
+    margin: -40px auto 0;
     border-radius: 10px;
     color: $black;
     padding: 3rem 0;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
 
     h1 {
         font-size: 1.2rem;
