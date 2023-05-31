@@ -1,0 +1,22 @@
+header {
+
+    background-image: url(/image-hero-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    height: 12rem;
+
+    padding: 1rem 1rem 0;
+
+    .inner {
+        display: flex;
+        justify-content: space-between;
+    
+        align-items: center;
+    }
+
+    .hamburger {
+        width: 15px;
+    }
+}

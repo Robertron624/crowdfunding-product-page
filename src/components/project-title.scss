@@ -1,0 +1,58 @@
+@import '/src/variables.scss';
+
+.project-title {
+    background-color: white;
+    max-width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: $black;
+    padding: 3rem 0;
+
+    h1 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        max-width: 12rem;
+        margin-inline: auto;
+    }
+
+    p {
+        font-size: .8rem;
+        color: $dark-gray;
+        max-width: 18.5rem;
+        margin-inline: auto;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+        max-width: 18.5rem;
+        margin-inline: auto;
+
+        .back-this {
+            background-color: $moderate-cyan;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: .9rem 1rem;
+            font-size: .8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            width: 70%;
+
+            &:hover {
+                background-color: $dark-cyan;
+            }
+        }
+
+        .bookmark {
+            font-size: 0;
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+}
