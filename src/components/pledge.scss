@@ -1,0 +1,51 @@
+@import '/src/variables.scss';
+
+.pledge {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 1rem;
+
+    &.disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+
+    h4 {
+        font-size: .8rem;
+        margin-bottom: .2rem;
+    }
+
+    .amount {
+        font-size: .8rem;
+        font-weight: 700;
+        color: $moderate-cyan;
+    }
+
+    .left {
+
+        span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $black;
+            margin-right: .5rem;
+        }
+    }
+
+    button {
+        background-color: $moderate-cyan;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: .7rem 0;
+        width: 8rem;
+        font-size: .8rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background-color: $dark-cyan;
+        }
+    }
+}
