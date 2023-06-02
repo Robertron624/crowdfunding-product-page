@@ -6,7 +6,7 @@ import BackSelection from "./backSelection/BackSelection";
 
 const boxStyle = {
     position: "absolute",
-    top: "80%",
+    top: "40rem",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 300,
@@ -25,12 +25,15 @@ const pledgeBoxStyle = {
 };
 
 const noRewardPledge = {
+    id: 4,
     title: "Pledge with no reward",
-    description: "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
+    description:
+        "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
 };
 
 const ProjectTitle = () => {
     const [selectionModalIsOpen, setSelectionModalIsOpen] = useState(false);
+    const [selectedPledge, setSelectedPledge] = useState(null);
 
     const handleOpen = () => setSelectionModalIsOpen(true);
     const handleClose = () => setSelectionModalIsOpen(false);
@@ -62,38 +65,45 @@ const ProjectTitle = () => {
                 style={{ overflow: "scroll" }}
             >
                 <Box sx={boxStyle}>
-                    <div
-                      style={pledgeBoxStyle}
-                    >
+                    <div style={pledgeBoxStyle}>
                         <h4
-                          style={{
-                              fontWeight: "bold",
-                              marginBottom: "1rem",
-                              fontSize: ".8rem",
-                          }}
+                            style={{
+                                fontWeight: "bold",
+                                marginBottom: "1rem",
+                                fontSize: ".8rem",
+                            }}
                         >
-                          Back this project</h4>
+                            Back this project
+                        </h4>
                         <p
-                          style={{
-                              fontSize: ".8rem",
-                              marginBottom: "1rem",
-                              color: "hsl(0, 0%, 48%)",
-                          }}
-                        
+                            style={{
+                                fontSize: ".8rem",
+                                marginBottom: "1rem",
+                                color: "hsl(0, 0%, 48%)",
+                            }}
                         >
                             Want to support us in bringing Mastercraft Bamboo
                             Monitor Riser out in the world?
                         </p>
-                        <div 
-                          style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              gap: "1rem",
-                          }}
+                        <div
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "1rem",
+                            }}
                         >
-                            <BackSelection pledge={noRewardPledge} />
+                            <BackSelection
+                                pledge={noRewardPledge}
+                                selectedPledge={selectedPledge}
+                                setSelectedPledge={setSelectedPledge}
+                            />
                             {pledgeData.map((pledge, index) => (
-                                <BackSelection key={index} pledge={pledge} />
+                                <BackSelection
+                                    key={index}
+                                    pledge={pledge}
+                                    selectedPledge={selectedPledge}
+                                    setSelectedPledge={setSelectedPledge}
+                                />
                             ))}
                         </div>
                     </div>

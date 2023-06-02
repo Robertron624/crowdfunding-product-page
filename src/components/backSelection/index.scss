@@ -2,36 +2,112 @@
 
 .pledge-container {
     border: .5px solid $dark-gray;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0rem;
     border-radius: 6px;
 
-    .pledge-top {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-        font-size: .8rem;
+    &.selected-pledge {
+        border: 2px solid $moderate-cyan;
+    }
 
-        .name-amount {
-            .pledge-amount {
-                color: $moderate-cyan;
-                font-weight: 600;
+    &.disabled-pledge {
+        border: 1px solid $dark-gray;
+        opacity: .5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    .inner {
+
+        padding: 0 1rem;
+
+        .pledge-top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: .8rem;
+    
+            input[type="radio"] {
+                width: 20px;
+                height: 20px;
+                margin: 0;
+
+                // &:checked {
+                //     accent-color: $moderate-cyan;
+                //     background-color: transparent;
+                // }
+            }
+    
+            .name-amount {
+                .pledge-amount {
+                    color: $moderate-cyan;
+                    font-weight: 600;
+                }
+            }
+        }
+    
+        p.pledge-description {
+            font-size: .8rem;
+            color: $dark-gray;
+            margin-bottom: 1rem;
+        }
+    
+        .pledge-bottom {
+            .pledge-left {
+                font-weight: 700;
+                span {
+                    margin-left: .5rem;
+                    font-weight: 400;
+                    color : $dark-gray;
+                }
             }
         }
     }
 
-    p.pledge-description {
-        font-size: .8rem;
-        color: $dark-gray;
-        margin-bottom: 1rem;
-    }
+    .enter-pledge {
+        border-top: 1px solid $dark-gray;
+        padding: 1.5rem 1rem 0rem;
+        margin-top: 1rem;
 
-    .pledge-bottom {
-        .pledge-left {
-            font-weight: 700;
-            span {
-                margin-left: .5rem;
-                font-weight: 400;
-                color : $dark-gray;
+        p {
+            text-align: center;
+            font-size: .9rem;
+            color: $dark-gray;
+            margin-bottom: 1rem;
+        }
+
+        .amount-continue {
+            display: flex;
+
+            .amount {
+                display: flex;
+                justify-content: center;
+                gap: .5rem;
+                width: 6rem;
+                border-radius: 30px;
+                padding: .5rem 0rem;
+                border: 1px solid $dark-gray;
+                color: $dark-gray;
+
+                input {
+                    width: 2rem;
+                    color: black;
+                    border: none;
+                    font-weight: 700;
+                }
+            }
+
+            .continue {
+                margin-left: auto;
+                width: 7rem;
+                padding: .5rem 0rem;
+                border-radius: 30px;
+                background-color: $moderate-cyan;
+                color: white;
+                font-weight: 700;
+                cursor: pointer;
+                border: none;
+                font-size: .8rem;
             }
         }
     }
