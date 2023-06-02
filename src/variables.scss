@@ -10,6 +10,8 @@ $dark-cyan: hsl(176, 72%, 28%);
 $black: hsl(0, 0%, 0%);
 $dark-gray: hsl(0, 0%, 48%);
 
+$light-gray: #e8e8e8;
+
 @mixin desktop {
     @media (min-width: 768px) {
         @content;
