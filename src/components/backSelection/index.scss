@@ -1,0 +1,38 @@
+@import "../../variables.scss";
+
+.pledge-container {
+    border: .5px solid $dark-gray;
+    padding: 1.5rem 1rem;
+    border-radius: 6px;
+
+    .pledge-top {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        font-size: .8rem;
+
+        .name-amount {
+            .pledge-amount {
+                color: $moderate-cyan;
+                font-weight: 600;
+            }
+        }
+    }
+
+    p.pledge-description {
+        font-size: .8rem;
+        color: $dark-gray;
+        margin-bottom: 1rem;
+    }
+
+    .pledge-bottom {
+        .pledge-left {
+            font-weight: 700;
+            span {
+                margin-left: .5rem;
+                font-weight: 400;
+                color : $dark-gray;
+            }
+        }
+    }
+}
