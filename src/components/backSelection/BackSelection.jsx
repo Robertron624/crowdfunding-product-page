@@ -24,6 +24,7 @@ const BackSelection = ({ pledge, selectedPledge, setSelectedPledge }) => {
                     type="radio" 
                     name={`pledge-${id}`}
                     checked={selectedPledge == id}
+                    disabled={disabled}
                   />
                   <div className="name-amount">
                       <h4>{title}</h4>

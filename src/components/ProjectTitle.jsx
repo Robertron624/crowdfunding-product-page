@@ -66,15 +66,35 @@ const ProjectTitle = () => {
             >
                 <Box sx={boxStyle}>
                     <div style={pledgeBoxStyle}>
-                        <h4
+                        <div
                             style={{
-                                fontWeight: "bold",
+                                display: "flex",
+                                justifyContent: "space-between",
+                                alignItems: "center",
                                 marginBottom: "1rem",
-                                fontSize: ".8rem",
                             }}
                         >
-                            Back this project
-                        </h4>
+                            <h4
+                                style={{
+                                    fontWeight: "bold",
+                                    fontSize: "1rem",
+                                }}
+                            >
+                                Back this project
+                            </h4>
+                            <button
+                                style={{
+                                    border: "none",
+                                    background: "none",
+                                }}
+                                onClick={handleClose}
+                            >
+                              <img 
+                                style={{cursor: "pointer", width: "1rem", height: "1rem"}}
+                                src="/icon-close-modal.svg" alt="cross icon"
+                              />
+                            </button>
+                        </div>
                         <p
                             style={{
                                 fontSize: ".8rem",

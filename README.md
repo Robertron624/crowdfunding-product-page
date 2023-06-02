@@ -81,7 +81,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 - [How to work with radio buttons in React](https://dev.to/collegewap/how-to-work-with-radio-buttons-in-react-3e0o) - This helped me for handling input radio buttons in React and states, was a really great read.
 
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Pure CSS Custom Styled Radio Buttons](https://moderncss.dev/pure-css-custom-styled-radio-buttons/) - This is an amazing article which helped me to style the radio buttons in an easy way.
 
 ## Author
 
