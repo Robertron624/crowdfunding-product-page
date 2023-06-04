@@ -11,15 +11,57 @@ header {
 
     padding: 1rem 1rem 0;
 
+    @include desktop {
+        background-image: url(/image-hero-desktop.jpg);
+        height: 20rem;
+        padding: 3rem 0rem 0;
+    }
+
     .inner {
         display: flex;
         justify-content: space-between;
         position: relative;
     
         align-items: center;
+
+        @include desktop {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    }
+
+    .desktop-links {
+        display: none;
+
+        @include desktop {
+            display: flex;
+            nav {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                width: 14       rem;
+
+                a {
+                    color: white;
+                    font-size: .8rem;
+                    font-weight: 600;
+                    text-decoration: none;
+                    letter-spacing: 1px;
+                    transition: all .3s ease-in-out;
+
+                    &:hover {
+                        color: $moderate-cyan;
+                    }
+                }
+            }
+        }
     }
 
     .menu-toggler {
         width: 15px;
+
+        @include desktop {
+            display: none;
+        }
     }
 }

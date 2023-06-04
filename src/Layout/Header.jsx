@@ -75,6 +75,15 @@ const Header = () => {
                     alt=""
                     className="menu-toggler"
                 />
+                <div className="desktop-links">
+                    <nav>
+                        {navLinks.map((link) => (
+                            <a href={link.link} key={link.name}>
+                                {link.name}
+                            </a>
+                        ))}
+                    </nav>
+                </div>
 
                 <Modal
                     open={isMobileMenuOpen}

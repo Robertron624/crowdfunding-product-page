@@ -44,7 +44,7 @@ const thankYouBoxStyle = {
     boxShadow: 24,
     p: 0,
     overflow: "scroll",
-}
+};
 
 const ProjectTitle = () => {
     const [selectionModalIsOpen, setSelectionModalIsOpen] = useState(false);
@@ -75,8 +75,10 @@ const ProjectTitle = () => {
                     Back this project
                 </button>
                 <button className="bookmark">
-                    Bookmark
                     <img src="/icon-bookmark.svg" alt="bookmark icon" />
+                    <span>
+                        Bookmark
+                    </span>
                 </button>
             </div>
             <Modal
@@ -109,10 +111,15 @@ const ProjectTitle = () => {
                                 }}
                                 onClick={handleClose}
                             >
-                              <img 
-                                style={{cursor: "pointer", width: "1rem", height: "1rem"}}
-                                src="/icon-close-modal.svg" alt="cross icon"
-                              />
+                                <img
+                                    style={{
+                                        cursor: "pointer",
+                                        width: "1rem",
+                                        height: "1rem",
+                                    }}
+                                    src="/icon-close-modal.svg"
+                                    alt="cross icon"
+                                />
                             </button>
                         </div>
                         <p
