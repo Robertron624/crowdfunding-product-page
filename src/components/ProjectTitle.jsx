@@ -56,6 +56,7 @@ const ProjectTitle = () => {
     const handleClose = () => setSelectionModalIsOpen(false);
 
     const handlePledgeDoneOpen = () => setPledgeDone(true);
+    const handlePledgeDoneClose = () => setPledgeDone(false);
 
     return (
         <div className="project-title">
@@ -144,6 +145,8 @@ const ProjectTitle = () => {
                                     pledge={pledge}
                                     selectedPledge={selectedPledge}
                                     setSelectedPledge={setSelectedPledge}
+                                    handlePledgeDoneOpen={handlePledgeDoneOpen}
+                                    handleClose={handleClose}
                                 />
                             ))}
                         </div>
@@ -156,7 +159,7 @@ const ProjectTitle = () => {
                 style={{ overflow: "scroll" }}
             >
                 <Box sx={thankYouBoxStyle}>
-                    <ThankYou />
+                    <ThankYou handlePledgeDoneClose={handlePledgeDoneClose} />
                 </Box>
             </Modal>
         </div>

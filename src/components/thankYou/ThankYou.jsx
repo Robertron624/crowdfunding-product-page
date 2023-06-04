@@ -1,6 +1,7 @@
 import "./index.scss";
+import PropTypes from "prop-types";
 
-const ThankYou = () => {
+const ThankYou = ({handlePledgeDoneClose}) => {
     return (
         <div className="thankyou-container">
             <div className="thankyou-content">
@@ -11,10 +12,14 @@ const ThankYou = () => {
                     Bamboo Monitor Riser worldwide. You will get an email once
                     our campaign is completed.
                 </p>
-                <button>Got it!</button>
+                <button onClick={handlePledgeDoneClose}>Got it!</button>
             </div>
         </div>
     );
+};
+
+ThankYou.propTypes = {
+    handlePledgeDoneClose: PropTypes.func.isRequired,
 };
 
 export default ThankYou;

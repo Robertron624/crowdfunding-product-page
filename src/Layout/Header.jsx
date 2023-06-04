@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 
 const boxStyle = {
     position: "absolute",
-    top: "20%",
+    top: "10rem",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 300,
