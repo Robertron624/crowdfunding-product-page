@@ -35,8 +35,12 @@ const ProjectTitle = () => {
     const [selectionModalIsOpen, setSelectionModalIsOpen] = useState(false);
     const [selectedPledge, setSelectedPledge] = useState(null);
 
+    const [pledgeDone, setPledgeDone] = useState(false);
+
     const handleOpen = () => setSelectionModalIsOpen(true);
     const handleClose = () => setSelectionModalIsOpen(false);
+
+    const handlePledgeDoneOpen = () => setPledgeDone(true);
 
     return (
         <div className="project-title">
@@ -116,6 +120,8 @@ const ProjectTitle = () => {
                                 pledge={noRewardPledge}
                                 selectedPledge={selectedPledge}
                                 setSelectedPledge={setSelectedPledge}
+                                handlePledgeDoneOpen={handlePledgeDoneOpen}
+                                handleClose={handleClose}
                             />
                             {pledgeData.map((pledge, index) => (
                                 <BackSelection
@@ -127,6 +133,14 @@ const ProjectTitle = () => {
                             ))}
                         </div>
                     </div>
+                </Box>
+            </Modal>
+            <Modal
+                open={pledgeDone}
+                onClose={() => setPledgeDone(false)}
+                style={{ overflow: "scroll" }}
+            >
+                <Box sx={boxStyle}>
                 </Box>
             </Modal>
         </div>

@@ -1,11 +1,16 @@
 import "./index.scss";
 import PropTypes from "prop-types";
 
-const BackSelection = ({ pledge, selectedPledge, setSelectedPledge }) => {
+const BackSelection = ({ pledge, selectedPledge, setSelectedPledge, handlePledgeDoneOpen, handleClose }) => {
     const {id, title, description, pledgeAmount, left } = pledge;
 
     const handleSelect = () => {
         setSelectedPledge(id);
+    };
+
+    const handleThankYou = () => {
+        handleClose();
+        handlePledgeDoneOpen();
     };
 
     const disabled = pledgeAmount && left === 0;
@@ -63,7 +68,12 @@ const BackSelection = ({ pledge, selectedPledge, setSelectedPledge }) => {
                         min={pledgeAmount}
                       />
                     </span>
-                    <button className="continue">Continue</button>
+                    <button
+                      className="continue"
+                      onClick={handleThankYou}
+                      >
+                        Continue
+                    </button>
                   </div>
                 </div>
             )}
@@ -81,6 +91,8 @@ BackSelection.propTypes = {
     }),
     selectedPledge: PropTypes.number,
     setSelectedPledge: PropTypes.func.isRequired,
+    handlePledgeDoneOpen: PropTypes.func,
+    handleClose: PropTypes.func,
 };
 
 export default BackSelection;
