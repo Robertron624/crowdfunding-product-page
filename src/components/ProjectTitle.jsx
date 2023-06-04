@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Modal, Box } from "@mui/material";
 import "./project-title.scss";
 import { pledgeData } from "../pledgeData";
+import ThankYou from "./thankYou/ThankYou";
 import BackSelection from "./backSelection/BackSelection";
 
 const boxStyle = {
@@ -30,6 +31,20 @@ const noRewardPledge = {
     description:
         "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
 };
+
+const thankYouBoxStyle = {
+    position: "absolute",
+    top: "18rem",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 300,
+    bgcolor: "background.paper",
+    borderRadius: "10px",
+    border: "none",
+    boxShadow: 24,
+    p: 0,
+    overflow: "scroll",
+}
 
 const ProjectTitle = () => {
     const [selectionModalIsOpen, setSelectionModalIsOpen] = useState(false);
@@ -140,7 +155,8 @@ const ProjectTitle = () => {
                 onClose={() => setPledgeDone(false)}
                 style={{ overflow: "scroll" }}
             >
-                <Box sx={boxStyle}>
+                <Box sx={thankYouBoxStyle}>
+                    <ThankYou />
                 </Box>
             </Modal>
         </div>

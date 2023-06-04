@@ -1,0 +1,38 @@
+@import '/src/variables.scss';
+
+
+.thankyou-container {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    
+    .check-icon {
+        margin: 0 auto 1rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        color: $dark-gray;
+        font-size: .8rem;
+    }
+
+    button {
+        margin: 0 auto;
+        display: block;
+        width: 8rem;
+        max-width: 200px;
+        padding: 1rem 0rem;
+        border-radius: 30px;
+        border: none;
+        background-color: $moderate-cyan;
+        color: white;
+        font-size: .8rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+    }
+}
