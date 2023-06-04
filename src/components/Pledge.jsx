@@ -5,23 +5,29 @@ const Pledge = ({pledge}) => {
 
   const {title, pledgeAmount, description, left} = pledge
 
+  const isDeactivated = left === 0;
+
   return (
-    <div className={`pledge ${left == 0 ? 'disabled': ''}`}>
-      <h4>
-        {title}
-      </h4>
-      <p className='amount'>
-        Pledge ${pledgeAmount} or more
-      </p>
+    <div className={`pledge ${isDeactivated ? 'disabled': ''}`}>
+      <div className="pledge-top">
+        <h4>
+          {title}
+        </h4>
+        <p className='amount'>
+          Pledge ${pledgeAmount} or more
+        </p>
+      </div>
       <p className='description'>
         {description}
       </p>
-      <p className='left'>
-        <span>{left}</span> left
-      </p>
-      <button disabled={left == 0}>
-        Select Reward
-      </button>
+      <div className="left-buttons">
+        <p className='left'>
+          <span>{left}</span> left
+        </p>
+        <button className={`${isDeactivated ? 'deactivated' : ''}`} disabled={isDeactivated}>
+          {isDeactivated ? 'Out of Stock' : 'Select Reward'}	
+        </button>
+      </div>
     </div>
   )
 }

@@ -11,41 +11,72 @@
         pointer-events: none;
     }
 
-    h4 {
-        font-size: .8rem;
-        margin-bottom: .2rem;
-    }
+    .pledge-top {
 
-    .amount {
-        font-size: .8rem;
-        font-weight: 700;
-        color: $moderate-cyan;
-    }
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
 
-    .left {
+        h4 {
+            font-size: .8rem;
+            margin-bottom: .2rem;
 
-        span {
-            font-size: 1.5rem;
+            @include desktop {
+                font-size: 1rem;
+            }
+        }
+    
+        .amount {
+            font-size: .8rem;
             font-weight: 700;
-            color: $black;
-            margin-right: .5rem;
+            color: $moderate-cyan;
         }
     }
 
-    button {
-        background-color: $moderate-cyan;
-        color: white;
-        border: none;
-        border-radius: 25px;
-        padding: .7rem 0;
-        width: 8rem;
-        font-size: .8rem;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all .3s ease-in-out;
 
-        &:hover {
-            background-color: $dark-cyan;
+    .left-buttons {
+
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .left {
+            span {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: $black;
+                margin-right: .5rem;
+            }
+        }
+    
+        button {
+            background-color: $moderate-cyan;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: .7rem 0;
+            width: 8rem;
+            font-size: .8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+    
+            &.deactivated {
+                background-color: $dark-gray;
+                color: white;
+                cursor: default;
+            }
+    
+            &:hover {
+                background-color: $dark-cyan;
+            }
         }
     }
+
 }

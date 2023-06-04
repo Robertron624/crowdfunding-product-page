@@ -13,13 +13,18 @@
     text-align: left;
     padding: 2rem 1rem;
 
+    @include desktop {
+        max-width: $desktop-mw;
+        padding: 2rem 2rem 2rem 3rem;
+    }
+
     h3 {
         font-size: 1.1rem;
         font-weight: 600;
         margin-bottom: 1rem;
     }
 
-    p {
+    & > p {
         color: $dark-gray;
         font-size: .8rem;
         margin-bottom: 1.5rem;

@@ -12,6 +12,8 @@ $dark-gray: hsl(0, 0%, 48%);
 
 $light-gray: #e8e8e8;
 
+$desktop-mw: 600px;
+
 @mixin desktop {
     @media (min-width: 768px) {
         @content;
