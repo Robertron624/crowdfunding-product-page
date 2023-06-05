@@ -26,6 +26,22 @@
             margin-bottom: 1.5rem;
             font-size: 0.8rem;
 
+            h4 {
+                font-weight: 700;
+                color: black;
+                font-size: 1rem;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    color: $moderate-cyan;
+                }
+            }
+
+            &:hover input[type="radio"] {
+                border-color: $moderate-cyan;
+            }
+
             input[type="radio"] {
                 /* Add if not using autoprefixer */
                 -webkit-appearance: none;
@@ -37,12 +53,19 @@
 
                 font: inherit;
                 color: currentColor;
-                width: 20px;
+                width: 22px;
                 height: 20px;
                 border: .5px solid $light-gray;
                 border-radius: 50%;
                 display: grid;
                 place-content: center;
+                cursor: pointer;
+
+                transition: .3s border-color ease-in-out;
+
+                &:hover {
+                    border-color: $moderate-cyan;
+                }
 
                 &::before {
                     content: "";
@@ -60,9 +83,40 @@
             }
 
             .name-amount {
+
+                @include desktop {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                }
+
+                .mobile-desktop {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                }
+
                 .pledge-amount {
                     color: $moderate-cyan;
                     font-weight: 600;
+                }
+
+                .desktop-left {
+                    display: none;
+
+                    @include desktop {
+                        display: block;
+                    }
+
+                    font-weight: 700;
+                    color: black;
+                    font-size: 1rem;
+
+                    span {
+                        margin-left: 0.5rem;
+                        font-weight: 400;
+                        color: $dark-gray;
+                    }
                 }
             }
         }
@@ -71,9 +125,19 @@
             font-size: 0.8rem;
             color: $dark-gray;
             margin-bottom: 1rem;
+
+            @include desktop {
+                margin-bottom: 0rem;
+                padding-left: 7%;
+            }
         }
 
         .pledge-bottom {
+
+            @include desktop {
+                display: none;
+            }
+
             .pledge-left {
                 font-weight: 700;
                 span {
@@ -90,15 +154,31 @@
         padding: 1.5rem 1rem 0rem;
         margin-top: 1rem;
 
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         p {
             text-align: center;
             font-size: 0.9rem;
             color: $dark-gray;
             margin-bottom: 1rem;
+
+            @include desktop {
+                margin-bottom: 0rem;
+            }
+
         }
 
         .amount-continue {
             display: flex;
+
+            @include desktop {
+                gap: 1rem;
+                justify-content: flex-end;
+            }
 
             .amount {
                 display: flex;
@@ -115,6 +195,10 @@
                     color: black;
                     border: none;
                     font-weight: 700;
+
+                    @include desktop {
+                        width: 3rem;
+                    }
                 }
             }
 
@@ -129,6 +213,10 @@
                 cursor: pointer;
                 border: none;
                 font-size: 0.8rem;
+
+                @include desktop {
+                    margin: 0;
+                }
             }
         }
     }

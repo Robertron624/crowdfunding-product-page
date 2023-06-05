@@ -1,8 +1,14 @@
 import "./index.scss";
 import PropTypes from "prop-types";
 
-const BackSelection = ({ pledge, selectedPledge, setSelectedPledge, handlePledgeDoneOpen, handleClose }) => {
-    const {id, title, description, pledgeAmount, left } = pledge;
+const BackSelection = ({
+    pledge,
+    selectedPledge,
+    setSelectedPledge,
+    handlePledgeDoneOpen,
+    handleClose,
+}) => {
+    const { id, title, description, pledgeAmount, left } = pledge;
 
     const handleSelect = () => {
         setSelectedPledge(id);
@@ -22,59 +28,62 @@ const BackSelection = ({ pledge, selectedPledge, setSelectedPledge, handlePledge
             } ${disabled ? "disabled-pledge" : ""}`}
         >
             <div className="inner">
-              <div className="pledge-top">
-                <label className="sr-only" htmlFor={`pledge-${id}`}></label>
-                  <input
-                    onChange={handleSelect}
-                    type="radio" 
-                    name={`pledge-${id}`}
-                    checked={selectedPledge == id}
-                    disabled={disabled}
-                  />
-                  <div className="name-amount">
-                      <h4>{title}</h4>
-                      {pledgeAmount && (
-                          <p className="pledge-amount">
-                              Pledge ${pledgeAmount} or more
-                          </p>
-                      )}
-                  </div>
-              </div>
-              <p className="pledge-description">{description}</p>
-              {pledgeAmount && (
-                  <div className="pledge-bottom">
-                      <p className="pledge-left">
-                          {left}
-                          <span>left</span>
-                      </p>
-                  </div>
-              )}
+                <div className="pledge-top">
+                    <label className="sr-only" htmlFor={`pledge-${id}`}></label>
+                    <input
+                        onChange={handleSelect}
+                        type="radio"
+                        name={`pledge-${id}`}
+                        checked={selectedPledge == id}
+                        disabled={disabled}
+                    />
+                    <div className="name-amount">
+                        <div className="mobile-desktop">
+                            <h4>{title}</h4>
+                            {pledgeAmount && (
+                                <p className="pledge-amount">
+                                    Pledge ${pledgeAmount} or more
+                                </p>
+                            )}
+                        </div>
+                        {pledgeAmount && (
+                            <p className="desktop-left">
+                                {left}
+                                <span>left</span>
+                            </p>
+                        )}
+                    </div>
+                </div>
+                <p className="pledge-description">{description}</p>
+                {pledgeAmount && (
+                    <div className="pledge-bottom">
+                        <p className="pledge-left">
+                            {left}
+                            <span>left</span>
+                        </p>
+                    </div>
+                )}
             </div>
             {selectedPledge == id && (
                 <div className="enter-pledge">
-                  <p>
-                    Enter your pledge
-                  </p>
-                  <div className="amount-continue">
-                    <span className="amount">
-                      <label className="sr-only" htmlFor="amount-input">
-                        Enter your pledge
-                      </label>
-                      $
-                      <input
-                        type="number"
-                        id="amount-input"
-                        placeholder={pledgeAmount}
-                        min={pledgeAmount}
-                      />
-                    </span>
-                    <button
-                      className="continue"
-                      onClick={handleThankYou}
-                      >
-                        Continue
-                    </button>
-                  </div>
+                    <p>Enter your pledge</p>
+                    <div className="amount-continue">
+                        <span className="amount">
+                            <label className="sr-only" htmlFor="amount-input">
+                                Enter your pledge
+                            </label>
+                            $
+                            <input
+                                type="number"
+                                id="amount-input"
+                                placeholder={pledgeAmount}
+                                min={pledgeAmount}
+                            />
+                        </span>
+                        <button className="continue" onClick={handleThankYou}>
+                            Continue
+                        </button>
+                    </div>
                 </div>
             )}
         </div>

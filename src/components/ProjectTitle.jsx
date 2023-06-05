@@ -5,26 +5,6 @@ import { pledgeData } from "../pledgeData";
 import ThankYou from "./thankYou/ThankYou";
 import BackSelection from "./backSelection/BackSelection";
 
-const boxStyle = {
-    position: "absolute",
-    top: "40rem",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 300,
-    bgcolor: "background.paper",
-    borderRadius: "10px",
-    border: "none",
-    boxShadow: 24,
-    p: 0,
-    overflow: "scroll",
-};
-
-const pledgeBoxStyle = {
-    padding: "1rem",
-    border: "1px solid hsl(0, 0%, 48%)",
-    borderRadius: "10px",
-};
-
 const noRewardPledge = {
     id: 4,
     title: "Pledge with no reward",
@@ -32,21 +12,8 @@ const noRewardPledge = {
         "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
 };
 
-const thankYouBoxStyle = {
-    position: "absolute",
-    top: "18rem",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 300,
-    bgcolor: "background.paper",
-    borderRadius: "10px",
-    border: "none",
-    boxShadow: 24,
-    p: 0,
-    overflow: "scroll",
-};
-
 const ProjectTitle = () => {
+
     const [selectionModalIsOpen, setSelectionModalIsOpen] = useState(false);
     const [selectedPledge, setSelectedPledge] = useState(null);
 
@@ -171,6 +138,43 @@ const ProjectTitle = () => {
             </Modal>
         </div>
     );
+};
+
+const boxStyle = {
+    position: "absolute",
+    top: "40rem",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "80%",
+    maxWidth: 600,
+    bgcolor: "background.paper",
+    borderRadius: "10px",
+    border: "none",
+    boxShadow: 24,
+    p: 0,
+};
+
+const pledgeBoxStyle = {
+    padding: "1rem",
+    border: "1px solid hsl(0, 0%, 48%)",
+    borderRadius: "10px",
+    '@media (min-width: 768px)': {
+        padding: "2rem"
+    }
+};
+
+const thankYouBoxStyle = {
+    position: "absolute",
+    top: "18rem",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 300,
+    bgcolor: "background.paper",
+    borderRadius: "10px",
+    border: "none",
+    boxShadow: 24,
+    p: 0,
+    overflow: "scroll",
 };
 
 export default ProjectTitle;
