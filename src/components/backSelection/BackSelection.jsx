@@ -39,7 +39,7 @@ const BackSelection = ({
                     />
                     <div className="name-amount">
                         <div className="mobile-desktop">
-                            <h4>{title}</h4>
+                            <h4 onClick={handleSelect}>{title}</h4>
                             {pledgeAmount && (
                                 <p className="pledge-amount">
                                     Pledge ${pledgeAmount} or more

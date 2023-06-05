@@ -168,13 +168,13 @@ const thankYouBoxStyle = {
     top: "18rem",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 300,
+    width: "80%",
+    maxWidth: 450,
     bgcolor: "background.paper",
     borderRadius: "10px",
     border: "none",
     boxShadow: 24,
     p: 0,
-    overflow: "scroll",
 };
 
 export default ProjectTitle;

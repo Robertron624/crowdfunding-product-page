@@ -34,5 +34,9 @@
         font-weight: 600;
         cursor: pointer;
         transition: all .3s ease-in-out;
+
+        &:hover {
+            background-color: $dark-cyan;
+        }
     }
 }

@@ -189,6 +189,12 @@
                 padding: 0.5rem 0rem;
                 border: 1px solid $dark-gray;
                 color: $dark-gray;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    cursor: pointer;
+                    border: 1px solid $moderate-cyan;
+                }
 
                 input {
                     width: 2rem;
@@ -213,6 +219,11 @@
                 cursor: pointer;
                 border: none;
                 font-size: 0.8rem;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $dark-cyan;
+                }
 
                 @include desktop {
                     margin: 0;
