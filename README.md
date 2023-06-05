@@ -32,11 +32,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
+![](./screenshot-mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Github repo](https://github.com/Robertron624/crowdfunding-product-page)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
@@ -49,33 +50,16 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Material UI](https://material-ui.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [sass](https://sass-lang.com/) - For styling
+- [Material UI](https://material-ui.com/) - For modals
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+With this project I learned to work input radios and using its values for defining and altering the app state.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I want to start working in projects that require form handling and I'm planning on using other UI components library different from MaterialUI, maybe ChakraUI or DaisyUI.
 
 ### Useful resources
 
@@ -85,6 +69,6 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+-   Personal Website - [Robert Ramirez](https://robert-ramirez.netlify.app)
+-   Frontend Mentor User- [@Robertron624](https://www.frontendmentor.io/profile/Robertron624)
+-   Twitter - [@robertdowny](https://www.twitter.com/robertdowny)
