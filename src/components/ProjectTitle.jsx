@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Modal, Box } from "@mui/material";
 import "./project-title.scss";
 import { pledgeData } from "../pledgeData";
@@ -13,9 +13,10 @@ const noRewardPledge = {
 };
 
 const ProjectTitle = () => {
-
     const [selectionModalIsOpen, setSelectionModalIsOpen] = useState(false);
     const [selectedPledge, setSelectedPledge] = useState(null);
+
+    const [userBookmarked, setUserBookmarked] = useState(false);
 
     const [pledgeDone, setPledgeDone] = useState(false);
 
@@ -24,6 +25,23 @@ const ProjectTitle = () => {
 
     const handlePledgeDoneOpen = () => setPledgeDone(true);
     const handlePledgeDoneClose = () => setPledgeDone(false);
+
+    const handleBookmark = () => {
+        if (userBookmarked) {
+            return;
+        }
+
+        const url = window.location.pathname;
+
+        window.localStorage.setItem("Mastercraft_Bamboo", url);
+        setUserBookmarked(true);
+    };
+
+    useEffect(() => {
+        if (localStorage.getItem("Mastercraft_Bamboo")) {
+            setUserBookmarked(true);
+        }
+    }, []);
 
     return (
         <div className="project-title">
@@ -41,10 +59,37 @@ const ProjectTitle = () => {
                 <button onClick={handleOpen} className="back-this">
                     Back this project
                 </button>
-                <button className="bookmark">
-                    <img src="/icon-bookmark.svg" alt="bookmark icon" />
-                    <span>
-                        Bookmark
+                <button
+                    className={`bookmark ${userBookmarked ? "bookmarked" : ""}`}
+                    onClick={handleBookmark}
+                >
+                    {/* <img src="/icon-bookmark.svg" alt="bookmark icon" /> */}
+                    <svg
+                        width="56"
+                        height="56"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g fill="none" fillRule="evenodd">
+                            <circle
+                                className={`${
+                                    userBookmarked ? "bookmarked" : ""
+                                }`}
+                                fill="currentColor"
+                                cx="28"
+                                cy="28"
+                                r="28"
+                            />
+                            <path
+                                className={`${
+                                    userBookmarked ? "bookmarked" : ""
+                                }`}
+                                fill="currentColor"
+                                d="M23 19v18l5-5.058L33 37V19z"
+                            />
+                        </g>
+                    </svg>
+                    <span className={`${userBookmarked ? "bookmarked" : ""}`}>
+                        {userBookmarked ? "Bookmarked" : "Bookmark"}
                     </span>
                 </button>
             </div>
@@ -158,9 +203,9 @@ const pledgeBoxStyle = {
     padding: "1rem",
     border: "1px solid hsl(0, 0%, 48%)",
     borderRadius: "10px",
-    '@media (min-width: 768px)': {
-        padding: "2rem"
-    }
+    "@media (minWidth: 768px)": {
+        padding: "2rem",
+    },
 };
 
 const thankYouBoxStyle = {
