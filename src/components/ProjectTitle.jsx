@@ -28,6 +28,8 @@ const ProjectTitle = () => {
 
     const handleBookmark = () => {
         if (userBookmarked) {
+            window.localStorage.removeItem("Mastercraft_Bamboo");
+            setUserBookmarked(false);
             return;
         }
 
